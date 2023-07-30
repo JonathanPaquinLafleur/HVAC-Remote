@@ -1,3 +1,5 @@
+![Screenshot_20230729-185716](https://github.com/JonathanPaquinLafleur/HVAC-Remote/assets/1084857/d9782c91-cd4a-414f-a2ba-86a100ad5a42)
+
 # Description
 Mobile app to control Mitsubishi 'Mr. SLIM' HVAC system through an arduino driven IR blaster.
 
