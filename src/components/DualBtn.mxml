@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" creationComplete="group1_creationCompleteHandler(event)">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			[Bindable]
+			public var btn1Lbl:String;
+			[Bindable]
+			public var btn2Lbl:String;
+			
+			protected function btn1_valueCommitHandler(event:FlexEvent):void
+			{
+				updateBg();
+			}
+			
+			protected function btn2_valueCommitHandler(event:FlexEvent):void
+			{
+				updateBg();
+			}
+			
+			private function updateBg():void{
+				bg.scaleX = btn1.selected ? -1 : 1;
+				bg.horizontalCenter = bg.scaleX == 1 ? -8 : 8
+				bgUp.visible = !btn1.selected && !btn2.selected;
+			}
+			
+			protected function group1_creationCompleteHandler(event:FlexEvent):void
+			{
+				updateBg();
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<s:Image id="bg" source="@Embed(source='assets/images/dualBtn.png')" horizontalCenter="8"/>
+	<s:Image id="bgUp" x="2" y="1" source="@Embed(source='assets/images/dualBtnUp.png')" horizontalCenter="0"/>
+	<s:HGroup gap="5" horizontalCenter="0" y="4">
+		<s:ToggleButton id="btn1" selected="false" fontSize="35" label="{btn1Lbl}" skinClass="components.skins.BtnSkin" fontFamily="MyriadPro-SemiBold"  width="180" height="98" valueCommit="btn1_valueCommitHandler(event)"/>
+		<s:ToggleButton id="btn2" selected="false" fontSize="35" label="{btn2Lbl}" skinClass="components.skins.BtnSkin" fontFamily="MyriadPro-SemiBold"  width="180" height="98" valueCommit="btn2_valueCommitHandler(event)"/>
+	</s:HGroup>
+</s:Group>

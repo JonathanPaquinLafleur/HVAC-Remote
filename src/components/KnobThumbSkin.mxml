@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SparkSkin xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			 xmlns:s="library://ns.adobe.com/flex/spark" 
+			 xmlns:mx="library://ns.adobe.com/flex/halo">
+	<s:states>
+		<s:State name="up" />
+		<s:State name="over" />
+		<s:State name="down" />
+		<s:State name="disabled" />
+	</s:states>
+	
+	<s:Ellipse width="{width}" height="{height}" alpha="0.0001">
+		<s:fill>
+			<s:RadialGradient>
+				<s:entries>
+					<s:GradientEntry color="0xFFFFFF" ratio="0"/>
+					<s:GradientEntry color="0xCCCCCC" ratio="1"/>
+				</s:entries>
+			</s:RadialGradient>
+		</s:fill>
+	</s:Ellipse>
+	<s:Image source="@Embed(source='../assets/images/thumb.png')" x="{width - 85}" y="{(height/2) - 21}"/>
+</s:SparkSkin>
